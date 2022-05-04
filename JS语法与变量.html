@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   alert("hello World");
+      //   alert("来汉码未来");
+      //   alert("学习javascript");
+      //   console.log("来汉码未来");
+      //   console.log("学习javascript");
+      console.log("汉码未来" + "程序员的梦工厂");
+      console.log("所有语言中,JavaScript是最好的语言!".substr(6, 10));
+      console.log("所有语言中,JavaScript是最好的语言!".substring(16, 6));
+      console.log("所有语言中,JavaScript是最好的语言!".slice(6, 16));
+      var a = "language";
+      b = Number(a.length);
+      console.log("language长度为" + b);
+      console.log("Never deter till to".indexOf("o"));
+      console.log(
+        "Never deter till tomorrow that which you can do today"
+          .substr(17, 8)
+          .toUpperCase()
+      );
+      //   var c = "050px",
+      //     d = "50",
+      //     e = "50px50",
+      //     f = "50.51";
+      //   document.writeln(parseInt(c));
+      //   document.writeln(parseInt(d));
+      //   document.writeln(parseInt(e));
+      //   document.writeln(parseInt(f));
+      //   document.writeln(parseFloat(c));
+      //   document.writeln(parseFloat(d));
+      //   document.writeln(parseFloat(e));
+      //   document.writeln(parseFloat(f));
+      //   h = Number(prompt("请输入第一个加数"));
+      //   i = Number(prompt("请输入第二个加数"));
+      //   alert(h + i);
+      //   console.log(h + i);
+      //   document.write(isNaN(null));
+      //   document.write(isNaN(10));
+      //   document.write(isNaN("我是字符串"));
+      //   document.write(isNaN("10"));
+      //   document.write(isNaN(undefined));
+      //   document.write(Number("hanmaweilai"));
+
+      //   console.log(null && 9); //null
+      //   console.log(0 && undefined); //0
+      //   console.log(1 && "hanmaweilai"); //HANMAWEILAI
+      //   console.log(NaN && undefined && 1); //NaN
+      //   console.log(null || undefined || 1); //1
+      //   console.log(1 || "0" || 33); //1
+      //   console.log(!!undefined || !0); //true
+
+      //   console.log(NaN || undefined || 1); //1
+      //   console.log(1 || "0" || 33); //1
+      //   console.log(!!undefined || !0); //true
+
+      //   var z = 5,
+      //     s = 7;
+      //   console.log((y = z), (z = s), (s = y));
+
+      //   var result;
+      //   var x = 4,
+      //     y = 5;
+      //   console.log((result = x++ + --y));
+      //   console.log(x);
+      //   console.log(y);
+
+      j = Number(prompt("请输入你的出生年份"));
+      alert((j % 4 == 0 && j % 100 !== 0) || (j % 100 == 0 && j % 400 == 0));
+    </script>
+  </body>
+</html>

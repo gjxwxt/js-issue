@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        height: 200px;
+        width: 200px;
+        margin: 200px auto;
+        background-color: #ccffff;
+      }
+      #span01 {
+        font-size: 25px;
+        display: block;
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+      }
+      #input01 {
+        width: 200px;
+        height: 45px;
+        box-sizing: border-box;
+        border-left: none;
+        border-right: none;
+        border-top: 2px solid #003366;
+        border-bottom: 2px solid #003366;
+        background-color: #ffcccc;
+        font-size: 20px;
+        line-height: 45px;
+        margin-bottom: 20px;
+      }
+      input:focus {
+        outline: none;
+      }
+      #box1 {
+        width: 400px;
+        height: 400px;
+        margin: auto;
+        border: 2px solid #003366;
+      }
+      #span02 {
+        font-size: 25px;
+        display: block;
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+      }
+      #select01 {
+        width: 200px;
+        height: 25px;
+      }
+      select:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <span id="span01">姓名:</span>
+      <input type="text" id="input01" />
+      <span id="span02"></span>
+    </div>
+    <div id="box1">
+      <span id="span02">单击选择您喜欢的颜色</span>
+      <select id="select01">
+        <option value="white">白色</option>
+        <option value="yellow">黄色</option>
+        <option value="red">红色</option>
+        <option value="pink">粉色</option>
+        <option value="orange">橘色</option>
+      </select>
+    </div>
+    <input type="text" id="input02" />
+    <select id="select02">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+    <input type="text" id="input03" />
+    <button id="but01">=</button>
+    <input type="text" id="input04" />
+    <script>
+      var box = document.getElementById("box");
+      var span02 = document.getElementById("span02");
+      var input01 = document.getElementById("input01");
+      //   获取焦点时
+      input01.onfocus = function () {
+        var input01Text = input01.value;
+        input01.style.border = "2px solid #003366";
+        if (input01Text.length == 0) {
+          span02.innerHTML = "请输入您的姓名";
+        }
+      };
+      //   失去焦点时
+      input01.onblur = function () {
+        var input01Text = input01.value;
+        if (input01Text.length == 0) {
+          input01.style.border = "2px solid #FF0033";
+          span02.innerHTML = "用户名不能为空";
+        } else {
+          span02.innerHTML = "";
+        }
+      };
+      //下拉选择框
+      var box1 = document.getElementById("box1");
+      var select01 = document.getElementById("select01");
+      select01.onchange = function () {
+        var index = select01.value;
+        switch (index) {
+          case "white":
+            box1.style.backgroundColor = "#FFFFFF";
+            break;
+          case "yellow":
+            box1.style.backgroundColor = "#CCCC00";
+            break;
+          case "red":
+            box1.style.backgroundColor = "#CC0033";
+            break;
+          case "pink":
+            box1.style.backgroundColor = "#FF6666";
+            break;
+          case "orange":
+            box1.style.backgroundColor = "#FFFF00";
+            break;
+        }
+      };
+      //计算器
+      var num = document.getElementById("input02");
+      var select02 = document.getElementById("select02");
+      var num02 = document.getElementById("input03");
+      var but01 = document.getElementById("but01");
+      var num03 = document.getElementById("input04");
+      but01.onclick = function () {
+        var selectedvalue = select02.value;
+        var input02Text = Number(num.value);
+        var input03Text = Number(num02.value);
+        switch (selectedvalue) {
+          case "+":
+            num03.value = input02Text + input03Text;
+            break;
+          case "-":
+            num03.value = input02Text - input03Text;
+            break;
+          case "*":
+            num03.value = input02Text * input03Text;
+            break;
+          case "/":
+            num03.value = input02Text / input03Text;
+            break;
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      div {
+        width: 800px;
+        height: 200px;
+        margin: 500px auto;
+        border: 1px solid #cc0033;
+        position: relative;
+        overflow: hidden;
+      }
+      ul {
+        width: 3000px;
+        height: 200px;
+        margin-top: 0px;
+        margin-left: 0px;
+        position: absolute;
+        left: 0;
+      }
+      li {
+        width: 200px;
+        height: 200px;
+        margin-right: 10px;
+        line-height: 200px;
+        text-align: center;
+        font-size: 80px;
+        color: #ff6666;
+        float: left;
+        background-color: #99cc00;
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li>0</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+      </ul>
+    </div>
+    <script>
+      var box = document.getElementsByTagName("div")[0];
+      var ulist = document.getElementsByTagName("ul")[0];
+      var li = document.getElementsByTagName("li");
+      var left = 0;
+      var timer;
+      ulist.innerHTML += ulist.innerHTML;
+      function move() {
+        timer = setInterval(() => {
+          ulist.style.transition = "left 0.05s";
+          left = left - 10;
+          if (left <= -1260) {
+            ulist.style.transition = "none";
+            left = 0;
+          }
+          ulist.style.left = left + "px";
+        }, 50);
+      }
+      move();
+      box.onmouseenter = function () {
+        clearInterval(timer);
+      };
+      box.onmouseleave = function () {
+        move();
+      };
+    </script>
+  </body>
+</html>

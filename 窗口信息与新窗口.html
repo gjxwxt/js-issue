@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="openWin()">打开窗口</button>
+    <button onclick="closeWin()">关闭窗口</button>
+    <button onclick="moveWin()">移动窗口</button>
+    <button onclick="resizeWin()">调整窗口</button>
+    <script>
+      //   //确认事件confirm
+      //   var i = confirm("是否确认");
+      //   if (i == true) {
+      //     alert("您选择了确认");
+      //   } else {
+      //     alert("您选择了取消");
+      //   }
+      //   //输入字符事件prompt
+      //   var j = prompt("请输入文字"，“哈利”);
+      //   while (j == null) {
+      //     var j = prompt("请输入文字");
+      //   }
+      //打开一个新窗口，而非链接（url，name，宽高状态栏之类，是否替换浏览器里的历史记录）
+      function openWin() {
+        myWindow = window.open("", "", "width=500,height=500");
+        myWindow.document.write("<p>这是新建窗口</p>");
+      }
+      //关闭窗口
+      function closeWin() {
+        myWindow.close();
+      }
+      //移动窗口位置，并获取焦点
+      function moveWin() {
+        myWindow.moveTo(300, 300);
+        myWindow.focus();
+      }
+      //调整新出现的页面的大小，并获取焦点
+      function resizeWin() {
+        myWindow.resizeTo(100, 100);
+        myWindow.focus();
+      }
+      //查看浏览器的信息
+
+      // var ua = navigator.userAgent;
+      // console.log(ua);
+      // var appname = navigator.appVersion;
+      // console.log(appname);
+      // var str = "Hello world!";
+      // console.log(str.indexOf("Hello"));
+      // console.log(str.indexOf("world"));
+
+      //indexof():在字符串中从前向后定位字符和字符串；所有的返回值都是指在字符串的绝对位置，如为空则为- 1
+      var test = "asdfjsdfjgkfasdsfsgfhgjgfjgdddd";
+      console.log(test.indexOf("dfj")); //从0向后定位 d 第一次出现的位置
+      console.log(test.indexOf("dfj", 1)); //从1向后定位 d 从第一个字符串第一次出现的位置
+      function textNav() {
+        var ua = navigator.userAgent;
+        console.log(ua);
+        if (ua.indexOf("Firefox") > -1) {
+          alert("你是Firefox");
+        } else if (ua.indexOf("Chrome") > -1) {
+          alert("您是Chrome");
+        }
+      }
+      //解释：js的test()方法用于检测一个字符串是否匹配某个格式。
+      //语法:RegExpObject.test(string)
+      //返回值：如果String中含有RegExpObject中匹配的字符返回true，否则返回false
+      //i是不区分目标字符串的大小写
+      var ua = navigator.userAgent;
+      if (/firefox/i.test(ua)) {
+        alert("你是火狐浏览器");
+      } else if (/chrome/i.test(ua)) {
+        alert("你是谷歌浏览器");
+      } else if (/msie/i.test(ua)) {
+        alert("你是IE5-IE10浏览器");
+      } else if ("ActiveXObject" in window) {
+        alert("你是IE11浏览器");
+      }
+    </script>
+  </body>
+</html>

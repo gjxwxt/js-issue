@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        height: 184px;
+        width: 264px;
+        margin: 200px auto;
+        overflow: hidden;
+        position: relative;
+        border: 1px solid #cccccc;
+      }
+      ul {
+        width: 2000px;
+        height: 184px;
+        position: absolute;
+        margin: 0px;
+        left: 0px;
+      }
+      li {
+        float: left;
+        height: 184px;
+        width: 264px;
+        list-style: none;
+      }
+      button {
+        position: absolute;
+        z-index: 2;
+        width: 40px;
+        height: 40px;
+        background-color: black;
+        opacity: 0.8;
+        border-radius: 50%;
+      }
+      #but01 {
+        left: 0px;
+        top: 50%;
+        margin-top: -20px;
+      }
+      #but02 {
+        right: 0px;
+        top: 50%;
+        margin-top: -20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button id="but01"></button>
+      <button id="but02"></button>
+      <ul>
+        <li><img src="./img/gt2.png" alt="" /></li>
+        <li><img src="./img/gt3.png" alt="" /></li>
+        <li><img src="./img/gt4.png" alt="" /></li>
+        <li><img src="./img/gt5.png" alt="" /></li>
+        <li><img src="./img/gt6.png" alt="" /></li>
+        <li><img src="./img/gt2.png" alt="" /></li>
+      </ul>
+    </div>
+    <script>
+      var ulist = document.getElementsByTagName("ul")[0];
+      var but01 = document.getElementsByTagName("button")[0];
+      var but02 = document.getElementsByTagName("button")[1];
+      var left = 0;
+      var lock = true;
+      //
+      ulist.style.transition = "left 1s";
+      //函数分两部分，第六张图之前过渡即可，第六张图时有个延迟执行，等过渡完函数节流前，直接瞒天过海。
+      but02.onclick = function () {
+        if (!lock) {
+          return;
+        }
+        lock = false;
+        left -= 264;
+        ulist.style.transition = "left 1s";
+        //注意ulcss样式写上left；
+        //如果播到第六张图，本身过渡完之后再加一个延时器自动执行功能；
+        if (left <= -1320) {
+          ulist.style.left = left + "px"; //先把第六张图过渡过去，在瞒天过海，暗度陈仓。
+          //延时器执行时，先把过渡删去，所以要在函数前面再加一个过渡，以免删去之后再次运行时就没过渡了
+          setTimeout(() => {
+            ulist.style.transition = "none";
+            left = 0;
+            ulist.style.left = left + "px";
+          }, 1000);
+        }
+        ulist.style.left = left + "px";
+        //函数节流
+        setTimeout(() => {
+          lock = true;
+        }, 1000);
+      };
+      //第一部分首先判断是否是第一张，如果是第一张瞬间把最后一张覆盖到第一张上，然后过渡到前一张，过渡用延时器执行即可.
+      but01.onclick = () => {
+        if (!lock) {
+          return;
+        }
+        lock = false;
+        if (left === 0) {
+          left = -1320;
+          ulist.style.transition = "none";
+          ulist.style.left = left + "px";
+          setTimeout(() => {
+            left = left + 264;
+            ulist.style.transition = "left 1s";
+            ulist.style.left = left + "px";
+          }, 0);
+        } else {
+          left = left + 264;
+          ulist.style.transition = "left 1s";
+          ulist.style.left = left + "px";
+        }
+        setTimeout(() => {
+          lock = true;
+        }, 1000);
+      };
+    </script>
+  </body>
+</html>

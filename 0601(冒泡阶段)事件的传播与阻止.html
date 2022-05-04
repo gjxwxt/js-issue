@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        height: 500px;
+        width: 500px;
+        margin: 200px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+      }
+      #dv1 {
+        width: 300px;
+        height: 300px;
+        background-color: teal;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #dv1 > div {
+        height: 150px;
+        width: 100px;
+        background-color: #cc3333;
+        border: 1px solid #cccccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <div id="dv1">
+        <div id="dv2"></div>
+        <div id="dv3"></div>
+        <div id="dv4"></div>
+      </div>
+    </div>
+    <a href="http://baidu.com" onclick="stopDefault()">点击前往百度</a>
+    <script>
+      var box = document.getElementById("box");
+      var dv1 = box.firstElementChild;
+      var dv2 = dv1.firstElementChild;
+      var dv3 = dv2.nextElementSibling;
+      var dv4 = dv3.nextElementSibling;
+      box.onclick = function () {
+        console.log("我是box");
+      };
+      dv1.onclick = function (e) {
+        stopBubble();
+        console.log("我是dv1");
+      };
+      dv2.onclick = function (e) {
+        console.log("我是dv2");
+      };
+      dv3.onclick = function (e) {
+        console.log("我是dv3");
+      };
+      dv4.onclick = function (e) {
+        console.log("我是dv4");
+      };
+      // 取消事件冒泡，用函数形式比单纯的stoppropagation泛用性强。
+      //支持e和e.stoppropagation的话就使用，
+      //不支持的话用ie里的e.cancelBubble=true。
+      function stopBubble(event) {
+        // 如果提供了事件对象，则这是一个非IE浏览器
+        if (event && event.stopPropagation) {
+          // 因此它支持W3C的stopPropagation()方法
+          event.stopPropagation();
+        } else {
+          // 否则，我们需要使用IE的方式来取消事件冒泡
+          window.event.cancelBubble = true;
+        }
+      }
+      //事件阻止事件
+      //支持e和e.preventDefault的话直接用
+      //不支持用ie的e.returnValue= false.
+      function stopDefault(event) {
+        if (event && event.preventDefault) {
+          // 阻止默认浏览器动作(W3C)
+          event.preventDefault();
+        } else {
+          // IE中阻止函数器默认动作的方式
+          window.event.returnValue = false;
+        }
+        return false;
+      }
+    </script>
+  </body>
+</html>

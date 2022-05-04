@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        position: relative;
+        left: 200px;
+        background-color: #003366;
+      }
+    </style>
+  </head>
+  <body>
+    <button>开始</button>
+    <button>结束</button>
+    <div></div>
+    <script>
+      var dv = document.getElementsByTagName("div")[0];
+      var but01 = document.getElementsByTagName("button")[0];
+      var but02 = document.getElementsByTagName("button")[1];
+      var h = 0;
+        var lock = true; //锁是为了在函数调用过程中防止再次被调用,一般是属于一次性动作时使用,比如换页面
+      var timer; //想要有停止就要设置名称,并设为全局变量才能在两个不同的方法里调用
+      but01.onclick = function () {
+        clearInterval(timer);//为了防止多个定时器来回叠加,先清理定时器.
+        if (!lock) {
+          return;
+        }
+        lock = false;
+        timer = setInterval(() => {
+          ++h;
+          dv.style.transition = "all 0.5s";
+          dv.style.left = 200 + 50 * h + "px";
+        }, 500);
+        setTimeout(() => {
+          lock = true;
+        }, 2000);
+      };
+      but02.onclick = function () {
+        clearInterval(timer);
+      };
+    </script>
+  </body>
+</html>

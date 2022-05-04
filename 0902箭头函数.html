@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //第一先把function去除，在把大括号删除，括号里还是传参，用箭头把function和大括号给删除了，
+      //还有return执行时可以省，返回参数时尽量不省。
+      var one = () => "I'm one";
+      console.log(one());
+      var two = (a) => a;
+      console.log(two(2));
+      var three = (b, c) => b + c;
+      console.log(three(2, 3));
+    </script>
+  </body>
+</html>

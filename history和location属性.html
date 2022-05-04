@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+<!-- 2 -->
+      //跳转.加载,链接信息是location的属性reload.herf
+    <button onclick="reLoad()">刷新页面</button>
+    <button onclick="rePlace()">去汉马课堂</button>
+    //下一页上一页是history里的属性go.back.forword,
+    <button onclick="go(1)">去下一页</button>
+    <button onclick="go(-1)">去上一页</button>
+    <script>
+      var but01 = document.getElementsByTagName("button")[0];
+      var but02 = document.getElementsByTagName("button")[1];
+      var but03 = document.getElementsByTagName("button")[2];
+      function reLoad() {
+        location.reload(true);
+      }
+      function rePlace() {
+        location = "http://hanmaweilai.com";
+      }
+      function go(a) {
+        history.go(a);
+      }
+      console.time("time1");
+      var j = 0;
+      for (i = 1; i <= 100; i++) {
+        j = j + i;
+      }
+      console.timeEnd("time1");
+// 1
+            //indexof():在字符串中从前向后定位字符和字符串；所有的返回值都是指在字符串的绝对位置，如为空则为- 1
+            var test = "asdfjsdfjgkfasdsfsgfhgjgfjgdddd";
+      console.log(test.indexOf("dfj")); //从0向后定位 d 第一次出现的位置
+      console.log(test.indexOf("dfj", 1)); //从1向后定位 d 从第一个字符串第一次出现的位置
+      function textNav() {
+        var ua = navigator.userAgent;
+        console.log(ua);
+        if (ua.indexOf("Firefox") > -1) {
+          alert("你是Firefox");
+        } else if (ua.indexOf("Chrome") > -1) {
+          alert("您是Chrome");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // ~~~~~~~~~~~~~~~~~~~1~~~~~~~~~~~~~~~~~~~
+      //   a= Number(prompt("请输入成绩")) ;
+      //    if(a<60){
+      //        alert("不合格");
+      //    }
+      //    else if(a>80){
+      //        alert("您的成绩为优");
+      //    }
+      //    else if(a>=60&&a<=80){
+      //        alert("您的成绩刚合格");
+      //    }
+      // ~~~~~~~~~~~~~~~~~~~~~~~~2~~~~~~~~~~~~~~~~~~
+
+      //   var a = prompt("请输入您的手机号码");
+      //   var b = a.length;
+      //   var c = parseInt(a);
+      //   var d = Number(a);
+      //   if (b != 11) {
+      //     alert("输入的手机号码必须是11位数字");
+      //   } else if (d != c) {
+      //     alert("请输入数字");
+      //   } else if (b == 11 && d === c) {
+      //     alert("号码输入正确");
+      //   }
+      // ~~~~~~~~~~~~~~~~~~~~~~~~5~~~~~~~~~~~~~~~~~~
+
+      //   var i = prompt("请输入数字");
+      //   var j = Number(i);
+      //   if (parseInt(i) === j) {
+      //     if (j % 2 == 0) {
+      //       alert("是偶数");
+      //     } else {
+      //       alert("是奇数");
+      //     }
+      //   } else {
+      //     alert("不是自然数");
+      //   }
+
+      // ~~~~~~~~~~~~~~~~~~~~~~~~6~~~~~~~~~~~~~~~~~~
+      //   var a = prompt("输入性别");
+      //   var b = prompt("请输入身高(cm)");
+      //   var c = prompt("请输入体重(kg)");
+      //   d = (b - 80) * 0.7; //先算出标准体重（男）
+      //   f = (b - 70) * 0.6; //标准体重（女）
+      //   if ((a = "男")) {
+      //     //如果是男的
+      //     if (c <= d + d * 0.05 && c >= d - d * 0.05) {
+      //       //在上下浮动的范围内
+      //       alert("体重正常");
+      //     } else if (c > d + d * 0.05) {
+      //       //超重了
+      //       alert("胖了");
+      //     } //太轻了
+      //     else {
+      //       alert("瘦了");
+      //     }
+      //   } else if ((a = "女")) {
+      //     if (c <= f + f * 0.05 && c >= f - f * 0.05) {
+      //       alert("体重正常");
+      //     } else if (c > f + f * 0.05) {
+      //       alert("胖了");
+      //     } else {
+      //       alert("瘦了");
+      //     }
+      //   }
+      // ~~~~~~~~~~~~~~~~~~~~~~~~7~~~~~~~~~~~~~~~~~~
+      //   var h = Number(prompt("输入要查询的业务编号"));
+      //   switch (h) {
+      //     case 1:
+      //       alert("账户余额为......");
+      //       break;
+      //     case 2:
+      //       alert("转账金额为。。。。。");
+      //       break;
+      //     case 3:
+      //       alert("信用额度为。。。。。");
+      //       break;
+      //     default:
+      //       alert("退出银行系统。。。。");
+      //   }
+
+      //~~~~~~~~~~~~~~~~~~~~~~第8题~~~~~~~~~~~~~~
+      // var i=Number(prompt("请输入您想转换成中文大写的0~9的数字"));
+      // switch(i){
+      //     case 1:alert("壹");break;
+      //     case 2:alert("贰");break;
+      //     case 3:alert("叁");break;
+      //     case 4:alert("肆");break;
+      //     case 5:alert("伍");break;
+      //     case 6:alert("陆");break;
+      //     case 7:alert("柒");break;
+      //     case 8:alert("捌");break;
+      //     case 9:alert("玖");break;
+      // }
+
+      //~~~~~~~~~~~~~~~~~~~~~~第9题~~~~~~~~~~~~~~
+      //   var score1=50;
+      //   var score2=70;
+      //   var a = score1>60? "及格":"不及格";
+      //   alert(a);
+      //   var b = score2>60? "及格":"不及格";
+      //   alert(b);
+
+      //~~~~~~~~~~~~~~~~~~~~~~第10题~~~~~~~~~~~~~~
+      //   for (i = 1; i < 10; i++) {
+      //     document.write("第" + i + "圈" + "</br>");
+      //   }
+
+      //~~~~~~~~~~~~~~~~~~~~~~第11题~~~~~~~~~~~~~~
+      //   var i = 1;
+      //   var sum = 0;
+      //   while (i <= 10) {
+      //     sum = sum + i;
+      //     i++;
+      //   }
+      //   document.write(sum);
+
+      //~~~~~~~~~~~~~~~~~~~~~~第32题~~~~~~~~~~~~~~
+      //   var a, b, c;
+      //   for (c = 1; c <= 9; c++) {
+      //     for (a = 0; a < c; a++) {
+      //       for (b = 0; b < a; b++) {
+      //         if (a + b + c == a * b * c) {
+      //           console.log(a * 100 + b * 10 + c);
+      //           break;
+      //         }
+      //       }
+      //     }
+      //   }
+
+      //~~~~~~~~~~~~~~~~~~~~~~第23题~~~~~~~~~~~~~~
+      //   var a, b, c;
+      //   for (a = 1; a <= 20; a++) {
+      //     for (b = 1; b <= 50; b++) {
+      //       for (c = 1; c <= 5; c++) {
+      //         if (a * 5 + b * 2 + c * 10 == 100) {
+      //           console.log(a + " " + b + " " + c);
+      //         }
+      //       }
+      //     }
+      //   }
+
+      //~~~~~~~~~~~~~~~~~~~~~~第22题~~~~~~~~~~~~~~
+      //   for (i = 1; i <= 9; i++) {
+      //     for (j = 1; j <= i; j++) {
+      //       h = i * j;
+      //       document.write(j + "*" + i + "=" + h + "&nbsp;");
+      //     }
+      //     document.write("</br>");
+      //   }
+
+      // ~~~~~~~~~~~~~~~~~~~~~~第21题~~~~~~~~~~~~~~
+      //   for (i = 1; i <= 9; i++) {
+      //     for (j = 1; j <= i; j++) {
+      //       document.write("*");
+      //     }
+      //     document.write("</br>");
+      //   }
+
+      // ~~~~~~~~~~~~~~~~~~~~~~第20题~~~~~~~~~~~~~~
+      //   for (i = 1; i <= 5; i++) {
+      //     document.write("游戏第" + i + "轮,得分:" + "</br>");
+      //     for (j = 1; j <= 10; j++) {
+      //       document.write(j * 10 + "分&nbsp;&nbsp;&nbsp;");
+      //     }
+      //     document.write("<hr>");
+      //   }
+
+      // ~~~~~~~~~~~~~~~~~~~~~~第19题~~~~~~~~~~~~~~
+      //   for (i = 1; i <= 10; i++) {
+      //     if (i % 7 == 0) {
+      //       continue;
+      //     }
+      //     console.log(i);
+      //   }
+      //   for (j = 11; j <= 100; j++) {
+      //     a = parseInt(j / 10);
+      //     b = j - a * 10;
+      //     if (j % 7 == 0 || a == 7 || b == 7) {
+      //       continue;
+      //     }
+      //     console.log(j);
+      //   }
+
+      // ~~~~~~~~~~~~~~~~~~~~~~第18题~~~~~~~~~~~~~~
+      //   for (i = 1; i <= 100; i++) {
+      //     if (i % 2 == 0 && i % 7 == 0) {
+      //       console.log(i);
+      //     }
+      //   }
+
+      // ~~~~~~~~~~~~~~~~~~~~~~第17题~~~~~~~~~~~~~~
+      //   var n = Number(prompt("请输入数字n的值"));
+      //   var s = 1;
+      //   for (i = 1; i <= n; i++) {
+      //     s = s + (i - 1) / i;
+      //   }
+      //   console.log(s);
+
+      // ~~~~~~~~~~~~~~~~~~~~~~第16题~~~~~~~~~~~~~~
+      //   var a = 1000;
+      //   var i = 0;
+      //   do {
+      //     i = i + 1;
+      //     a = a * Math.pow(1.05, i);
+      //   } while (a <= 2000);
+      //   {
+      //     console.log(i);
+      //     console.log(a);
+      //   }
+
+      // ~~~~~~~~~~~~~~~~~~~~~~第15题~~~~~~~~~~~~~~
+      //   var i = 0;
+      //   var sum = 0;
+      //   while (i <= 99) {
+      //     i++;
+      //     if (i % 2 != 0) {
+      //       sum = sum + i;
+      //     }
+      //   }
+      //   console.log(sum);
+
+      // ~~~~~~~~~~~~~~~~~~~~~~第14题~~~~~~~~~~~~~~
+      //   for (i = 0; i <= 100; i++) {
+      //     if (i % 2 == 0 && i != 22 && i != 44 && i != 66 && i != 88) {
+      //       document.write(i + "</br>");
+      //     }
+      //   }
+
+      // ~~~~~~~~~~~~~~~~~~~~~~第13题~~~~~~~~~~~~~~
+      //   var i = Number(prompt("请输入密码"));
+      //   while (i != 123456) {
+      //     i = Number(prompt("请输入密码"));
+      //   }
+      //   var j = Number(prompt("请再次输入密码"));
+      //   while (j != 123456) {
+      //     var j = Number(prompt("请再次输入密码"));
+      //   }
+      //   alert("两次输入的密码一致");
+
+      // ~~~~~~~~~~~~~~~~~~~~~~第12题~~~~~~~~~~~~~~
+      //   var i = Number(prompt("请输入您猜的数字"));
+      //   while (i != 5) {
+      //     if (i > 5) {
+      //       alert("猜大了");
+      //       i = Number(prompt("请输入您猜的数字"));
+      //     } else if (i < 5) {
+      //       alert("猜小了");
+      //       i = Number(prompt("请输入您猜的数字"));
+      //     }
+      //   }
+      //   alert("您猜对了");
+    </script>
+  </body>
+</html>

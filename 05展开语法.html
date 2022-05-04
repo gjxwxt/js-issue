@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+    <script>
+      let arr = [1, 2, 3, 4];
+      console.log(...arr);//语法形式展开
+      let str = "adsadsad";
+      let arr1 = [...str];//复制给另外一个数组
+      console.log(arr1[0]);
+      let textarea = document.getElementById("textarea");//用数组长度测试输入的字符数
+      var h = 0;
+      textarea.onkeyup = function (e) {
+        let str1 = textarea.value;
+        let brr = [...str1];
+        console.log(brr);
+        console.log(brr.length);
+        console.log(e.keyCode);
+        console.log(h);
+      };
+    </script>
+  </body>
+</html>

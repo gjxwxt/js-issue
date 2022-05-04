@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>点我创建一个新的li列表</button>
+    <ul class="list">
+      <!-- //有内层元素时也可以用,触发事件的元素会做为e.target -->
+      <li><span>1</span></li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+    <script>
+      var but = document.getElementsByTagName("button")[0];
+      var list = document.querySelector(".list");
+      //必须是冒泡事件，
+      but.onclick = function () {
+        var li1 = document.createElement("li");
+        li1.innerHTML = "6";
+        list.appendChild(li1);
+        console.log(li1.innerHTML);
+      };
+      list.onclick = function (e) {
+        e.target.style.color = "#009966";
+        console.log(e.target);
+        console.log(e.currentTarget);
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head runat="server">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        button[0].onmouseover = function () {
+          this.style.backgroundColor = "#00adb5";
+        };
+        button[0].onmouseleave = function () {
+          this.style.backgroundColor = "#eeeeee";
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <div>前端技术</div>
+    <div>IOS技术</div>
+    <div>安卓技术</div>
+    <div>JAVA技术</div>
+    <input type="button" ; value="点击我试试" />
+    <button>鼠标移入移出我试试</button>
+
+    <script>
+      var dv = document.getElementsByTagName("div");
+      dv[0].innerHTML = "来汉码未来学习最新的前端技术";
+      dv[1].innerText = "来汉码未来学习最新的IOS技术";
+      dv[2].innerHTML = "来汉码未来学习最新的安卓技术";
+      dv[3].innerText = "来汉码未来学习最新的JAVA技术";
+      var input = document.getElementsByTagName("input");
+      var button = document.getElementsByTagName("button");
+      input[0].onclick = function () {
+        this.style.backgroundColor = "#f80";
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+      * {
+        text-align: center;
+      }
+      nav li {
+        display: inline;
+        width: 24%;
+        text-decoration: none;
+        padding: 15px;
+      }
+      li:hover {
+        background-color: lightblue;
+      }
+      section {
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--导航栏部分HTML代码-->
+    <nav id="nav">
+      <ul>
+        <li class="act">选卡1</li>
+        <li>选卡2</li>
+        <li>选卡3</li>
+        <li>选卡4</li>
+      </ul>
+    </nav>
+    <!--内容部分HTML代码-->
+    <div id="container">
+      <section class="tab" style="background-color: tomato">内容1</section>
+      <section class="tab" style="background-color: cyan">内容2</section>
+      <section class="tab" style="background-color: blueviolet">内容3</section>
+      <section class="tab" style="background-color: gold">内容4</section>
+    </div>
+    <script>
+      window.onload = function () {
+        var nav = document.getElementById("nav");
+        var oNav = nav.getElementsByTagName("li"); //选项数组
+
+        var container = document.getElementById("container");
+        var oDiv = container.getElementsByClassName("tab"); //内容数组
+        //是先将除了第一个li的display属性设为none，才能将四个隐藏下去。
+        for (var m = 1; m < oNav.length; m++) {
+          oDiv[m].style.display = "none";
+        }
+        //因为每个li都是独立的，所以li没有index属性，给每个li添加index属性
+        for (i = 0; i < oDiv.length; i++) {
+          oNav[i].index = i;
+        }
+        //相当于给每个li设置了onclick函数
+        for (var i = 0; i < oNav.length; i++) {
+          //点击哪个li，所有的li的class属性先全变为空，再修改this的class属性
+          oNav[i].onclick = function () {
+            for (var i = 0; i < oNav.length; i++) {
+              oNav[i].className = "";
+              oDiv[i].style.display = "none";
+            }
+            this.className = "act";
+            //并将其设为展示出来
+            oDiv[this.index].style.display = "block";
+          };
+        }
+      };
+    </script>
+  </body>
+</html>

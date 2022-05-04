@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        var i = 30;
+        var span01 = document.getElementsByTagName("span")[0];
+        span01.innerHTML = "您还可以输入" + i + "个字";
+        var text1 = document.getElementById("text1");
+        text1.onkeyup = function () {
+          var textLength = text1.value;
+          i = 30 - textLength.length;
+          if (i >= 0) {
+            span01.innerHTML = "您还可以输入" + i + "个字";
+          }
+          if (i < 0) {
+            span01.innerHTML = "您已超出" + -i + "个字";
+          }
+          console.log(i);
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <p>字数限制在30字内</p>
+    <span></span>
+    <textarea name="" id="text1" cols="50" rows="7"></textarea>
+  </body>
+</html>
